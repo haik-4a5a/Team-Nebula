@@ -1,0 +1,38 @@
+<!--
+  Generated template for the FormulierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>formulier</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<button ion-button full (click)="onButtonClicked()">
+  	Terug
+  	</button>
+	<form>
+	  <ion-item>
+      	<ion-input type="date" name="Datum"></ion-input>
+      </ion-item>
+      <ion-item>
+      	<ion-label>Manier</ion-label>
+      		<ion-select name="manier">
+      			<ion-option value="telefoon">Telefonisch</ion-option>
+      			<ion-option value="bezoek">Bezoek</ion-option>
+      		</ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gesprek</ion-label>
+        <ion-textarea  name="gesprek" rows="5" cols="80"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Save</button>
+    </form>
+
+</ion-content>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController, ModalController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { FormulierPage } from '../formulier/formulier';
+import { LeerlingPage } from '../leerling/leerling';
 
 @Component({
   selector: 'page-home',
@@ -16,7 +16,7 @@ export class HomePage {
      
 }
 	public onButtonClicked(): void {
-		let modal = this.modalCtrl.create(FormulierPage);
+		let modal = this.modalCtrl.create(LeerlingPage);
 		modal.present();
 	}
 

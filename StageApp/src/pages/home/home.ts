@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController, ModalController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 import { UserInfo } from '../userInfo/userInfo';
+import { LeerlingPage } from '../leerling/leerling';
 
 @Component({
   selector: 'page-home',
@@ -26,5 +28,10 @@ export class HomePage {
       shizzleYear: shizzleYear
     });
   }
+
+	public onButtonClicked(): void {
+		let modal = this.modalCtrl.create(LeerlingPage);
+		modal.present();
+	}
 
 }

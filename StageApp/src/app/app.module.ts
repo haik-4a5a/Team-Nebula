@@ -7,8 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 //importing pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { FormulierPage } from '../pages/formulier/formulier'
-import { UserInfo } from '../pages/userInfo/userInfo'
+import { FormulierPage } from '../pages/formulier/formulier';
+import { UserInfo } from '../pages/userInfo/userInfo';
+import { LeerlingPage } from '../pages/leerling/leerling';
+import { FormulierkeuzePage } from '../pages/formulierkeuze/formulierkeuze';
 
 //import AF2 module
 import { AngularFireModule } from 'angularfire2';
@@ -28,8 +30,9 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     FormulierPage,
-    UserInfo
-
+    UserInfo,
+    LeerlingPage,
+    FormulierkeuzePage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,9 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     FormulierPage,
-    UserInfo
+    UserInfo,
+    LeerlingPage,
+    FormulierkeuzePage
   ],
   providers: [
     StatusBar,

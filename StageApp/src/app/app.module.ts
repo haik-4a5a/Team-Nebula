@@ -8,25 +8,27 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormulierPage } from '../pages/formulier/formulier'
+import { UserInfo } from '../pages/userInfo/userInfo'
 
 //import AF2 module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyA8FZ3Tq9Tyu6OCa7NHfWQBt0FWPbZNmN4",
-    authDomain: "stageapp-29a98.firebaseapp.com",
-    databaseURL: "https://stageapp-29a98.firebaseio.com",
-    // projectId: "stageapp-29a98",
-    storageBucket: "stageapp-29a98.appspot.com",
-    messagingSenderId: "645756260312"
+  apiKey: "AIzaSyA8FZ3Tq9Tyu6OCa7NHfWQBt0FWPbZNmN4",
+  authDomain: "stageapp-29a98.firebaseapp.com",
+  databaseURL: "https://stageapp-29a98.firebaseio.com",
+  projectId: "stageapp-29a98",
+  storageBucket: "stageapp-29a98.appspot.com",
+  messagingSenderId: "645756260312"
 };
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FormulierPage
+    FormulierPage,
+    UserInfo
 
   ],
   imports: [
@@ -39,7 +41,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    FormulierPage
+    FormulierPage,
+    UserInfo
   ],
   providers: [
     StatusBar,

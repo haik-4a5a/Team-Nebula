@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        User Info
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="goBackToHome()">
+          <ion-icon name="return-left"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <p>{{shizzleTitle}}</p>
+        <p>{{shizzleArtist}}</p>
+        <p>{{shizzleWebUrl}}</p>
+        <p>{{shizzleYear}}</p>
+      </ion-item>
+    </ion-list>
+    <button ion-button (click)="onButtonClicked()">
+      Formulier
+    </button>
+  </ion-content>

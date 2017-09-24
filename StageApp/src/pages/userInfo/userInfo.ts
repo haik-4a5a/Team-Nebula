@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { FormulierPage } from '../formulier/formulier';
+import { FormulierkeuzePage } from '../formulierkeuze/formulierkeuze';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -31,7 +32,6 @@ export class UserInfo {
     this.navCtrl.pop();
   }
   public onButtonClicked(): void {
-		let modal = this.modalCtrl.create(FormulierPage);
-		modal.present();
-  }
+		this.navCtrl.push(FormulierkeuzePage);
+	}
 }

@@ -32,3 +32,5 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+StageApp/.sourcemaps/main.js.map
+StageApp/.sourcemaps/0.js.map

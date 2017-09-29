@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { FormulierPage } from '../formulier/formulier';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 /**
  * Generated class for the FormulierkeuzePage page.
@@ -15,8 +16,12 @@ import { FormulierPage } from '../formulier/formulier';
   templateUrl: 'formulierkeuze.html',
 })
 export class FormulierkeuzePage {
+    shizzles: FirebaseListObservable<any>;
+    shizzleId;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, af: AngularFireDatabase) {
+    this.shizzles = af.list('/shizzles/4');
+
   }
 
   ionViewDidLoad() {
@@ -24,6 +29,11 @@ export class FormulierkeuzePage {
   }
 public onButtonClicked(): void {
 		let modal = this.modalCtrl.create(FormulierPage);
+    {
+        this.shizzles.push({
+          formuliernaam: ('')
+  });
+}
 		modal.present();
 	}
 public onButtonClickedBack(): void{

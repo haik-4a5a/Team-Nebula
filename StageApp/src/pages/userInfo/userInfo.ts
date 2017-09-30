@@ -32,6 +32,8 @@ export class UserInfo {
     this.navCtrl.pop();
   }
   public onButtonClicked(): void {
-		this.navCtrl.push(FormulierkeuzePage);
+		this.navCtrl.push(FormulierkeuzePage, {
+      shizzleId: this.shizzleId,
+    });
 	}
 }

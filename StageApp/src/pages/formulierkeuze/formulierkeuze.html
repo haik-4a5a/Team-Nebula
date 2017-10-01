@@ -14,11 +14,11 @@
 
 
 <ion-content padding>
-<button ion-button (click)="onButtonClickedBack()">
-  	Terug
-  </button>
+  <ion-item *ngFor="let shizzle of shizzles | async" (click)="read(shizzle.$key, shizzle.datum, shizzle.formuliernaam, shizzle.gesprek, shizzle.manier)">
+    {{ shizzle.$key }}
+  </ion-item>
   <button ion-button (click)="onButtonClicked()">
-  	Formulier(Bij productie uit action sheet of op click van een aangemaakt formulier)
+  	Nieuw formulier
   </button>
 
 </ion-content>

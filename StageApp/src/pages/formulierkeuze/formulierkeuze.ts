@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { FormulierPage } from '../formulier/formulier';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { UserInfo } from '../userInfo/userInfo';
 
 /**
@@ -18,24 +18,40 @@ import { UserInfo } from '../userInfo/userInfo';
 })
 export class FormulierkeuzePage {
     shizzles: FirebaseListObservable<any>;
+    shizzle: FirebaseObjectObservable<any>;
     shizzleId;
 
-  constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, af: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
     this.shizzles = af.list('/shizzles/'+this.shizzleId);
     console.log(this.shizzleId);
+    this.shizzle = af.object('/shizzles/'+this.shizzleId+'/form/');
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormulierkeuzePage');
   }
+  read(FormId, FormDate, FormTekst, FormManier){
+    let prompt = this.navCtrl.push(FormulierPage, {
+      FormId: FormId,
+      FormDate: FormDate,
+      FormTekst: FormTekst,
+      FormManier: FormManier
+
+    });
+  }
+
 public onButtonClicked(): void {
 		let modal = this.modalCtrl.create(FormulierPage);
     {
         this.shizzles.push({
-          formuliernaam: ('')
-  });
+          formuliernaam: "asd",
+          datum: "",
+          manier: "",
+          gesprek: "",
+        });
+
 }
 		modal.present();
 	}

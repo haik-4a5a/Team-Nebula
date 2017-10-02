@@ -30,10 +30,11 @@ export class FormulierkeuzePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormulierkeuzePage');
   }
-  read(FormId, FormDate, FormTekst, FormManier){
+  read(FormId, FormDate, FormName, FormTekst, FormManier){
     let prompt = this.navCtrl.push(FormulierPage, {
       FormId: FormId,
       FormDate: FormDate,
+      FormName: FormName,
       FormTekst: FormTekst,
       FormManier: FormManier
 
@@ -44,7 +45,7 @@ public onButtonClicked(): void {
     let modal = this.modalCtrl.create(FormulierPage);
     {
       this.shizzles.push({
-        formuliernaam: "Test",
+        formuliernaam: "Gespreksformulier",
         datum: "",
         manier: "",
         gesprek: "",

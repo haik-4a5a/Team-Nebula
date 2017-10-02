@@ -16,11 +16,23 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 })
 export class FormulierPage {
   shizzles: FirebaseListObservable<any>;
-  shizzleId;  
+  shizzleId;
+  FormId;
+  FormDate;
+  FormName;
+  FormTekst;
+  FormManier;
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
     this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
+    this.FormName = navParam.get("FormName");
+    this.FormDate = navParam.get("FormDate");
+    this.FormTekst = navParam.get("FormTekst");
+    this.FormManier = navParam.get("FormManier");
+
+
+
   }
 
   ionViewDidLoad() {

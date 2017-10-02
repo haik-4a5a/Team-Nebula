@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 /**
  * Generated class for the FormulierPage page.
@@ -14,14 +15,21 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'formulier.html',
 })
 export class FormulierPage {
+  shizzles: FirebaseListObservable<any>;
+  shizzleId;  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
+    this.shizzleId = navParam.get("shizzleId");
+    this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormulierPage');
   }
   public onButtonClicked(): void{
-  	this.viewCtrl.dismiss();
+    
+  }
+  public back(): void{
+    this.viewCtrl.dismiss();
   }
 }

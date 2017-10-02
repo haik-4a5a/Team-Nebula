@@ -24,8 +24,6 @@ export class FormulierkeuzePage {
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
     this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
-    console.log(this.shizzleId);
-    this.shizzle = af.object('/shizzles/' + this.shizzleId + '/form/');
 
   }
 
@@ -43,16 +41,15 @@ export class FormulierkeuzePage {
   }
 
 public onButtonClicked(): void {
-		let modal = this.modalCtrl.create(FormulierPage);
+    let modal = this.modalCtrl.create(FormulierPage);
     {
-        this.shizzles.push({
-          formuliernaam: "Test",
-          datum: "",
-          manier: "",
-          gesprek: "",
-        });
-
-}
+      this.shizzles.push({
+        formuliernaam: "Test",
+        datum: "",
+        manier: "",
+        gesprek: "",
+      });
+    }
 		modal.present();
 	}
 public onButtonClickedBack(): void{

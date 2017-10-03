@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
+import jsPDF from 'jspdf';
+declare let jsPD;
+
 /**
  * Generated class for the FormulierPage page.
  *
@@ -14,6 +17,11 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
   selector: 'page-formulier',
   templateUrl: 'formulier.html',
 })
+
+form {
+  date = "";
+};
+
 export class FormulierPage {
   shizzles: FirebaseListObservable<any>;
   shizzleId;
@@ -41,6 +49,12 @@ export class FormulierPage {
   public onButtonClicked(): void{
     
   }
+  public download(): void{
+        var doc = new jsPDF()
+        doc.text(form.date, 10, 10)
+        doc.save('a4.pdf')
+  }
+
   public back(): void{
     this.viewCtrl.dismiss();
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, ActionSheetController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 import jsPDF from 'jspdf';
@@ -63,7 +63,7 @@ export class FormulierPage {
     console.log('ionViewDidLoad FormulierPage');
   }
   public onButtonClicked(): void{
-    
+
   }
   public download(): void{
         var doc = new jsPDF()

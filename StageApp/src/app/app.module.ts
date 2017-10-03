@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { FormulierPage } from '../pages/formulier/formulier';
 import { UserInfo } from '../pages/userInfo/userInfo';
 import { FormulierkeuzePage } from '../pages/formulierkeuze/formulierkeuze';
+import { BeoordelingPage } from '../pages/beoordeling/beoordeling';
+import { BeoordelingPageTwo } from '../pages/beoordeling2/beoordeling2';
 
 //import AF2 module
 import { AngularFireModule } from 'angularfire2';
@@ -30,7 +32,9 @@ export const firebaseConfig = {
     HomePage,
     FormulierPage,
     UserInfo,
-    FormulierkeuzePage
+    FormulierkeuzePage,
+    BeoordelingPage,
+    BeoordelingPageTwo
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,10 @@ export const firebaseConfig = {
     HomePage,
     FormulierPage,
     UserInfo,
-    FormulierkeuzePage
+    FormulierkeuzePage,
+    BeoordelingPage,
+    BeoordelingPageTwo
+
   ],
   providers: [
     StatusBar,

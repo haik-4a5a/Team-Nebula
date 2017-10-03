@@ -3,7 +3,6 @@ import { NavController, AlertController, ActionSheetController, ModalController 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { UserInfo } from '../userInfo/userInfo';
-import { LeerlingPage } from '../leerling/leerling';
 
 @Component({
   selector: 'page-home',

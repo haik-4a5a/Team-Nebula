@@ -35,6 +35,7 @@ export class FormulierkeuzePage {
   }
   read(FormId, FormDate, FormName, FormTekst, FormManier){
     let prompt = this.navCtrl.push(FormulierPage, {
+      shizzleId: this.shizzleId,
       FormId: FormId,
       FormDate: FormDate,
       FormName: FormName,

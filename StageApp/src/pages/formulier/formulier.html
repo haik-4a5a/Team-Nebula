@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Gespreks formulier</ion-title>
+    <ion-title>{{FormName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,24 +17,27 @@
 	<button ion-button full (click)="back()">
   	Terug
   	</button>
-	<form>
+	<form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label fixed>Formulier</ion-label>
+      <ion-input type="text" [(ngModel)]="form.formuliernaam" value="{{FormName}}" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-item>
 	  <ion-item>
-      	<ion-input type="date" name="Datum"></ion-input>
-      </ion-item>
-      <ion-item>
-      	<ion-label>Manier</ion-label>
-      		<ion-select name="manier">
-      			<ion-option value="telefoon">Telefonisch</ion-option>
-      			<ion-option value="bezoek">Bezoek</ion-option>
-      		</ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-label>Gesprek</ion-label>
-        <ion-textarea  name="gesprek" value="{{ FormName }}" rows="5" cols="80"></ion-textarea>
-      </ion-item>
-      <button ion-button full (click)="onButtonClicked()">
-        Opslaan
-        </button>
-    </form>
-
+      <ion-input type="date" [(ngModel)]="form.date" value="{{FormDate}}" name="Datum"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Manier</ion-label>
+      	<ion-select [(ngModel)]="form.manier" name="manier">
+    		<ion-option value="telefoon" name="telefoon">Telefonisch</ion-option>
+    		<ion-option value="bezoek" name="bezoek">Bezoek</ion-option>
+    		</ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gesprek</ion-label>
+      <ion-textarea  name="gesprek" [(ngModel)]="form.gesprek" value="{{FormTekst}}" rows="5" cols="80"></ion-textarea>
+    </ion-item>
+    <button ion-button full type="submit">
+      Opslaan
+    </button>
+  </form>
 </ion-content>

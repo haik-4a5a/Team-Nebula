@@ -9,7 +9,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormulierPage } from '../pages/formulier/formulier';
 import { UserInfo } from '../pages/userInfo/userInfo';
-import { LeerlingPage } from '../pages/leerling/leerling';
 import { FormulierkeuzePage } from '../pages/formulierkeuze/formulierkeuze';
 import { BeoordelingPage } from '../pages/beoordeling/beoordeling';
 import { BeoordelingPageTwo } from '../pages/beoordeling2/beoordeling2';
@@ -33,7 +32,6 @@ export const firebaseConfig = {
     HomePage,
     FormulierPage,
     UserInfo,
-    LeerlingPage,
     FormulierkeuzePage,
     BeoordelingPage,
     BeoordelingPageTwo
@@ -50,7 +48,6 @@ export const firebaseConfig = {
     HomePage,
     FormulierPage,
     UserInfo,
-    LeerlingPage,
     FormulierkeuzePage,
     BeoordelingPage,
     BeoordelingPageTwo

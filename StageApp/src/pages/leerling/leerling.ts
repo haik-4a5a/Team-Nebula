@@ -22,6 +22,7 @@ export class LeerlingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LeerlingPage');
   }
+
 public onButtonClicked(): void {
 		let modal = this.modalCtrl.create(FormulierkeuzePage);
 		modal.present();

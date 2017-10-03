@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController, ActionSheetController } from 'ionic-angular';
 import { FormulierPage } from '../formulier/formulier';
+import { FormulierkeuzePage } from '../formulierkeuze/formulierkeuze';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { UserInfo } from '../userInfo/userInfo';
 import { BeoordelingPageTwo } from '../beoordeling2/beoordeling2';
@@ -14,7 +15,7 @@ export class BeoordelingPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public modalCtrl: ModalController, public viewCtrl: ViewController) {
     // // If we navigated to this page, we will have an item available as a nav param
     // this.selectedItem = navParams.get('item');
     //

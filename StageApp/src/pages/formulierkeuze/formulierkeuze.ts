@@ -52,12 +52,12 @@ export class FormulierkeuzePage {
       {
         text: 'Gespreksformulier',
         handler: () => {
-          this.modalCtrl.create(FormulierPage);
+          this.navCtrl.push(FormulierPage);
         }
       },{
         text: 'Beoordelingsformulier',
         handler: () => {
-          this.modalCtrl.create(BeoordelingPage);
+          this.navCtrl.push(BeoordelingPage);
         }
       },{
         text: 'Cancel',

@@ -14,7 +14,7 @@ export class BeoordelingPageTwo {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public modalCtrl: ModalController, public viewCtrl: ViewController) {
     // // If we navigated to this page, we will have an item available as a nav param
     // this.selectedItem = navParams.get('item');
     //
@@ -34,8 +34,11 @@ export class BeoordelingPageTwo {
 
 
   public pageOne(): void {
-		let modal = this.modalCtrl.create(BeoordelingPage);
-		modal.present();
+		this.navCtrl.push(BeoordelingPage);
 	}
+
+  // public back(): void{
+  //   this.navCtrl.pop();
+  // }
 
 }

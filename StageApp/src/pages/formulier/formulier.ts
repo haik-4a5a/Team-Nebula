@@ -30,17 +30,33 @@ export class FormulierPage {
   FormName;
   FormTekst;
   FormManier;
+  form = {
+    formuliernaam: '',
+    datum: '',
+    manier: '',
+    gesprek: ''
+  };
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
-    this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
+    this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');  
+    this.FormId = navParam.get("FormId");    
     this.FormName = navParam.get("FormName");
     this.FormDate = navParam.get("FormDate");
     this.FormTekst = navParam.get("FormTekst");
     this.FormManier = navParam.get("FormManier");
+  }
 
-
-
+  public logForm(){
+    this.shizzles.update(this.FormId, {
+      formuliernaam: this.form.formuliernaam,
+      datum: this.form.datum,
+      manier: this.form.manier,
+      gesprek: this.form.gesprek
+    });
+    console.log(this.form.datum);
+    console.log(this.form.manier);
+    console.log(this.form.gesprek);
   }
 
   ionViewDidLoad() {

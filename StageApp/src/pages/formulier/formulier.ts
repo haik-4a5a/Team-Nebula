@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController, ActionSheetController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
-import jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 declare let jsPD;
 
 /**
@@ -36,8 +36,8 @@ export class FormulierPage {
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
-    this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');  
-    this.FormId = navParam.get("FormId");    
+    this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
+    this.FormId = navParam.get("FormId");
     this.FormName = navParam.get("FormName");
     this.FormDate = navParam.get("FormDate");
     this.FormTekst = navParam.get("FormTekst");
@@ -60,9 +60,9 @@ export class FormulierPage {
     console.log('ionViewDidLoad FormulierPage');
   }
   public onButtonClicked(): void{
-    
+
   }
-   
+
   public download(): void{
         var document = "<h1>formulier</h1>"+" "+this.form.formuliernaam;
         var doc = new jsPDF()

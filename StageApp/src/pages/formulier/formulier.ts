@@ -18,9 +18,6 @@ declare let jsPD;
   templateUrl: 'formulier.html',
 })
 
-form {
-  date = "";
-};
 
 export class FormulierPage {
   shizzles: FirebaseListObservable<any>;
@@ -63,11 +60,13 @@ export class FormulierPage {
     console.log('ionViewDidLoad FormulierPage');
   }
   public onButtonClicked(): void{
-
+    
   }
+   
   public download(): void{
+        var document = "<h1>formulier</h1>"+" "+this.form.formuliernaam;
         var doc = new jsPDF()
-        doc.text(form.date, 10, 10)
+        doc.text(document, 10, 10)
         doc.save('a4.pdf')
   }
 

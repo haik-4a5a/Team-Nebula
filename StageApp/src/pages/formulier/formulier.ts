@@ -63,7 +63,7 @@ export class FormulierPage {
     
   }
    
-  public download(): void{
+  public PDFexport(): void{
         var document = "<h1>formulier</h1>"+" "+this.form.formuliernaam;
         var doc = new jsPDF()
         doc.text(document, 10, 10)

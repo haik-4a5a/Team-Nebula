@@ -32,6 +32,7 @@ export class FormulierkeuzePage {
   }
   read(FormId, FormDate, FormName, FormTekst, FormManier){
     let prompt = this.navCtrl.push(FormulierPage, {
+      shizzleId: this.shizzleId,
       FormId: FormId,
       FormDate: FormDate,
       FormName: FormName,
@@ -42,16 +43,12 @@ export class FormulierkeuzePage {
   }
 
 public onButtonClicked(): void {
-    let modal = this.modalCtrl.create(FormulierPage);
-    {
       this.shizzles.push({
-        formuliernaam: "Gespreksformulier",
+        formuliernaam: "Nieuw gespreksformulier",
         datum: "",
         manier: "",
         gesprek: "",
       });
-    }
-		modal.present();
 	}
 public onButtonClickedBack(): void{
   	this.viewCtrl.dismiss();

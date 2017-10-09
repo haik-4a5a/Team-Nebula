@@ -20,13 +20,16 @@ import { BeoordelingPageTwo } from '../beoordeling2/beoordeling2';
 })
 export class FormulierkeuzePage {
     shizzles: FirebaseListObservable<any>;
+    bshizzles: FirebaseListObservable<any>;
     shizzle: FirebaseObjectObservable<any>;
+    bshizzle: FirebaseListObservable<any>;
     shizzleId;
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController,
     public viewCtrl: ViewController, public actionSheetCtrl: ActionSheetController,  public af: AngularFireDatabase) {
     this.shizzleId = navParam.get("shizzleId");
     this.shizzles = af.list('/shizzles/' + this.shizzleId + '/form/');
+    this.bshizzles = af.list('/shizzles/' + this.shizzleId + '/bform/');
 
   }
 
@@ -44,6 +47,11 @@ export class FormulierkeuzePage {
 
     });
   }
+  readb(FormId){
+    let prompt = this.navCtrl.push(BeoordelingPage, {
+      FormId: FormId
+    });
+  }
 
   showOptions() {
   let actionSheet = this.actionSheetCtrl.create({
@@ -52,12 +60,16 @@ export class FormulierkeuzePage {
       {
         text: 'Gespreksformulier',
         handler: () => {
-          this.navCtrl.push(FormulierPage);
+          this.shizzles.push({
+            formuliernaam: "Nieuw Gespreksformulier"
+          })
         }
       },{
         text: 'Beoordelingsformulier',
         handler: () => {
-          this.navCtrl.push(BeoordelingPage);
+          this.bshizzles.push({
+            formuliernaam: "Nieuw Beoordelingsformulier"
+          })
         }
       },{
         text: 'Cancel',

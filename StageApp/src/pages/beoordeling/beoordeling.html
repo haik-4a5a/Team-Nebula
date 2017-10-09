@@ -270,9 +270,6 @@
         <ion-label>Mogelijke opmerking en/of aandachtspunten met<br>
           betrekking tot technische aspecten:</ion-label>
         <ion-item>
-          <ion-textarea  name="opmerking" value="{{ FormName }}" rows="5" cols="80"></ion-textarea>
-        </ion-item>
-        <ion-item>
         <ion-label>Beoordeling technische aspecten</ion-label>
           <ion-select name="Beoordeling">
             <ion-option value="onvoldoende">O</ion-option>
@@ -280,6 +277,10 @@
             <ion-option value="goed">G</ion-option>
             <ion-option value="niets">X</ion-option>
           </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Opmerkingen</ion-label>
+        <ion-textarea  name="opmerking" value="{{ FormName }}" rows="5" cols="80"></ion-textarea>
       </ion-item>
 
 

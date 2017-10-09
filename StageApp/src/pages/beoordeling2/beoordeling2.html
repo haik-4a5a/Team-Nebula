@@ -164,11 +164,6 @@
           <ion-label>Opmerkingen</ion-label>
           <ion-textarea  name="opmerking" value="{{ FormName }}" rows="5" cols="80"></ion-textarea>
         </ion-item>
-
-        <ion-item>
-          <ion-label>Opmerkingen</ion-label>
-          <ion-textarea  name="opmerking" value="{{ FormName }}" rows="5" cols="80"></ion-textarea>
-        </ion-item>
         <ion-label>   Mogelijke opmerking en/of aandachtspunten met<br>
           betrekking tot houdingsspecten:</ion-label>
         <ion-item>
@@ -184,12 +179,7 @@
           </ion-select>
       </ion-item>
 
-
-
-      <button ion-button full (click)="pageOne()">
-        Terug
-        </button>
-      <button ion-button full (click)="opSlaanGegevens()">
+      <button ion-button full (click)="save()">
         Opslaan
         </button>
     </form>

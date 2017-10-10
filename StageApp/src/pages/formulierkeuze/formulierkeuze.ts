@@ -24,6 +24,66 @@ export class FormulierkeuzePage {
     shizzle: FirebaseObjectObservable<any>;
     bshizzle: FirebaseListObservable<any>;
     shizzleId;
+    form ={
+      formuliernaam: '',
+      datum: '',
+      manier: '',
+      gesprek: ''
+    }
+    bform = {
+      a1: '',
+      o1: '',
+      a2: '',
+      o2: '',
+      a3: '',
+      o3: '',
+      a4: '',
+      o4: '',
+      a5: '',
+      o5: '',
+      a6: '',
+      o6: '',
+      a7: '',
+      o7: '',
+      a8: '',
+      o8: '',
+      a9: '',
+      o9: '',
+      a10: '',
+      o10: '',
+      a11: '',
+      o11: '',
+      a12: '',
+      o12: '',
+      a13: '',
+      o13: '',
+      a14: '',
+      o14: '',
+      a15: '',
+      o15: '',
+      a16: '',
+      o16: '',
+      a17: '',
+      o17: '',
+      a18: '',
+      o18: '',
+      a19: '',
+      o19: '',
+      a20: '',
+      o20: '',
+      a21: '',
+      o21: '',
+      a22: '',
+      o22: '',
+      a23: '',
+      o23: '',
+      a24: '',
+      o24: '',
+      ah: '',
+      oh: '',
+      ata: '',
+      ota: ''
+    };
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public modalCtrl: ModalController,
     public viewCtrl: ViewController, public actionSheetCtrl: ActionSheetController,  public af: AngularFireDatabase) {
@@ -49,6 +109,7 @@ export class FormulierkeuzePage {
   }
   readb(FormId){
     let prompt = this.navCtrl.push(BeoordelingPage, {
+      shizzleId: this.shizzleId,
       FormId: FormId
     });
   }
@@ -61,14 +122,69 @@ export class FormulierkeuzePage {
         text: 'Gespreksformulier',
         handler: () => {
           this.shizzles.push({
-            formuliernaam: "Nieuw Gespreksformulier"
+            formuliernaam: "Nieuw Gespreksformulier",
+            datum: '',
+            manier: '',
+            gesprek: ''
           })
         }
       },{
         text: 'Beoordelingsformulier',
         handler: () => {
           this.bshizzles.push({
-            formuliernaam: "Nieuw Beoordelingsformulier"
+            formuliernaam: "Nieuw Beoordelingsformulier",
+            a1: '',
+            o1: '',
+            a2: '',
+            o2: '',
+            a3: '',
+            o3: '',
+            a4: '',
+            o4: '',
+            a5: '',
+            o5: '',
+            a6: '',
+            o6: '',
+            a7: '',
+            o7: '',
+            a8: '',
+            o8: '',
+            a9: '',
+            o9: '',
+            a10: '',
+            o10: '',
+            a11: '',
+            o11: '',
+            a12: '',
+            o12: '',
+            a13: '',
+            o13: '',
+            a14: '',
+            o14: '',
+            a15: '',
+            o15: '',
+            a16: '',
+            o16: '',
+            a17: '',
+            o17: '',
+            a18: '',
+            o18: '',
+            a19: '',
+            o19: '',
+            a20: '',
+            o20: '',
+            a21: '',
+            o21: '',
+            a22: '',
+            o22: '',
+            a23: '',
+            o23: '',
+            a24: '',
+            o24: '',
+            ah: '',
+            oh: '',
+            ata: '',
+            ota: ''
           })
         }
       },{

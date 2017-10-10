@@ -46,24 +46,8 @@ export class BeoordelingPage {
     o14: '',
     a15: '',
     o15: '',
-    a16: '',
-    o16: '',
-    a17: '',
-    o17: '',
-    a18: '',
-    o18: '',
-    a19: '',
-    o19: '',
-    a20: '',
-    o20: '',
-    a21: '',
-    o21: '',
-    a22: '',
-    o22: '',
-    a23: '',
-    o23: '',
-    a24: '',
-    o24: ''
+    ata: '',
+    ota: ''
   };
 
   constructor(public navCtrl: NavController, public navParam: NavParams,  public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
@@ -72,9 +56,9 @@ export class BeoordelingPage {
     this.FormId = navParam.get("FormId"); 
   }
 
-  public pageTwo(): void {
-		let prompt = this.navCtrl.push(BeoordelingPageTwo, {
-      a1 : this.bform.a1,
+  public save(): void {
+		this.bshizzles.update(this.FormId, {
+      a1: this.bform.a1,
       o1: this.bform.o1,
       a2: this.bform.a2,
       o2: this.bform.o2,
@@ -104,24 +88,13 @@ export class BeoordelingPage {
       o14: this.bform.o14,
       a15: this.bform.a15,
       o15: this.bform.o15,
-      a16: this.bform.a16,
-      o16: this.bform.o16,
-      a17: this.bform.a17,
-      o17: this.bform.o17,
-      a18: this.bform.a18,
-      o18: this.bform.o18,
-      a19: this.bform.a19,
-      o19: this.bform.o19,
-      a20: this.bform.a20,
-      o20: this.bform.o20,
-      a21: this.bform.a21,
-      o21: this.bform.o21,
-      a22: this.bform.a22,
-      o22: this.bform.o22,
-      a23: this.bform.a23,
-      o23: this.bform.o23,
-      a24: this.bform.a24,
-      o24: this.bform.o24
+      ata: this.bform.ata,
+      ota: this.bform.ota,
+    });
+    console.log(this.bform.a1)
+    let prompt = this.navCtrl.push(BeoordelingPageTwo, {
+      shizzleId: this.shizzleId,
+      FormId: this.FormId 
     });
 	}
 }

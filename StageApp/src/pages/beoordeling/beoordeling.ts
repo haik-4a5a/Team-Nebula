@@ -5,6 +5,8 @@ import { FormulierkeuzePage } from '../formulierkeuze/formulierkeuze';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { UserInfo } from '../userInfo/userInfo';
 import { BeoordelingPageTwo } from '../beoordeling2/beoordeling2';
+import { AfoListObservable, AngularFireOfflineDatabase } from 'angularfire2-offline/database';
+
 
 @Component({
   selector: 'page-beoordeling',
@@ -14,6 +16,7 @@ export class BeoordelingPage {
   selectedItem: any;
   shizzleId;
   bshizzles: FirebaseListObservable<any>;
+  cshizzles: AfoListObservable<any[]>;
   FormId;
   bform = {
     a1: '',
@@ -50,10 +53,11 @@ export class BeoordelingPage {
     ota: ''
   };
 
-  constructor(public navCtrl: NavController, public navParam: NavParams,  public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParam: NavParams,  public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFireDatabase,
+    public afoDatabase: AngularFireOfflineDatabase) {
     this.shizzleId = navParam.get("shizzleId");
-    this.bshizzles = af.list('/shizzles/' + this.shizzleId + '/bform/');  
-    this.FormId = navParam.get("FormId"); 
+    this.bshizzles = af.list('/shizzles/' + this.shizzleId + '/bform/');
+    this.FormId = navParam.get("FormId");
   }
 
   public save(): void {
@@ -94,7 +98,7 @@ export class BeoordelingPage {
     console.log(this.bform.a1)
     let prompt = this.navCtrl.push(BeoordelingPageTwo, {
       shizzleId: this.shizzleId,
-      FormId: this.FormId 
+      FormId: this.FormId
     });
 	}
 }

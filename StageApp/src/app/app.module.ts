@@ -16,6 +16,7 @@ import { BeoordelingPageTwo } from '../pages/beoordeling2/beoordeling2';
 //import AF2 module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA8FZ3Tq9Tyu6OCa7NHfWQBt0FWPbZNmN4",
@@ -40,7 +41,8 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireOfflineModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -8,33 +8,33 @@
 <ion-header>
 
   <ion-navbar color='primary'>
-    <ion-title>{{form.formuliernaam}}</ion-title>
+    <ion-title>{{FormName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding ng-app="formApp" ng-controller="formCtrl">
+<ion-content padding ng-app="formApp">
   <button ion-button full (click)="back()">
     Terug
     </button>
-  <form (ngSubmit)="logForm()">
+  <form (ngSubmit)="logForm()" ng-controller="formCtrl">
     <ion-item>
       <ion-label fixed>Formulier</ion-label>
-      <ion-input type="text" [(ngModel)]="form.formuliernaam" value="{{FormName}}" [ngModelOptions]="{standalone: true}"></ion-input>
+      <ion-input type="text" [(ngModel)]="form.formuliernaam" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="date" [(ngModel)]="form.datum" ng-value="Date" name="Datum"></ion-input>
+      <ion-input type="date" [(ngModel)]="form.datum" name="Datum"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Manier</ion-label>
-        <ion-select [(ngModel)]="form.manier" ng-value="Manier" name="manier">
+        <ion-select [(ngModel)]="form.manier" name="manier">
         <ion-option value="telefoon" name="telefoon">Telefonisch</ion-option>
         <ion-option value="bezoek" name="bezoek">Bezoek</ion-option>
         </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Gesprek</ion-label>
-      <ion-textarea  name="gesprek" [(ngModel)]="form.gesprek" ng-value="Tekst" rows="5" cols="80"></ion-textarea>
+      <ion-textarea  name="gesprek" [(ngModel)]="form.gesprek" rows="5" cols="80">Hallo</ion-textarea>
     </ion-item>
     <button ion-button full type="submit">
       Opslaan

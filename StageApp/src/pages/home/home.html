@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding class='back-img'>
-  <ion-list>
+  <ion-list no-lines>
     <ion-item class="list-back" *ngFor="let shizzle of shizzles | async" (click)="read(shizzle.$key, shizzle.title, shizzle.artist, shizzle.img_url, shizzle.web_url, shizzle.year)">
       {{shizzle.title}}
     </ion-item>

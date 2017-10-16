@@ -51,9 +51,6 @@ export class FormulierPage {
       manier: this.form.manier,
       gesprek: this.form.gesprek
     });
-    console.log(this.form.datum);
-    console.log(this.form.manier);
-    console.log(this.form.gesprek);
   }
 
   ionViewDidLoad() {

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController, ModalController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController, ModalController} from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
 import { UserInfo } from '../userInfo/userInfo';
+import {
+  AfoListObservable,
+  AngularFireOfflineDatabase } from 'angularfire2-offline/database';
+
 
 @Component({
   selector: 'page-home',
@@ -11,6 +14,7 @@ import { UserInfo } from '../userInfo/userInfo';
 export class HomePage {
 
   shizzles: FirebaseListObservable<any>;
+
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,
     af: AngularFireDatabase, public actionSheetCtrl: ActionSheetController, public modalCtrl: ModalController) {

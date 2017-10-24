@@ -63,8 +63,8 @@ export class FormulierPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormulierPage');
   }
-  public onButtonClicked(): void{
-
+  public pop(): void{
+    this.viewCtrl.dismiss();
   }
 
   public PDFexport(): void{
@@ -90,6 +90,7 @@ export class FormulierPage {
     doc.text(20, 90, gesprek);
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
   }
+<<<<<<< HEAD
   public CSVexport(): void{
     var csvstring = [{
 	    "Column 1": "1-1",
@@ -113,4 +114,6 @@ var blob = new Blob([csv]);
   public back(): void{
     this.viewCtrl.dismiss();
   }
+=======
+>>>>>>> dcfcfdc021cc5c4f1cf39b19951b36477c2e9f40
 }

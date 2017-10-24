@@ -4,13 +4,10 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
 <ion-header>
-
   <ion-navbar color='primary'>
     <ion-title>{{FormName}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding ng-app="formApp">
@@ -23,18 +20,18 @@
       <ion-input type="text" [(ngModel)]="form.formuliernaam" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="date" [(ngModel)]="form.datum" name="Datum"></ion-input>
+      <ion-input type="date" [(ngModel)]="form.datum" value="{{FormDate}}" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Manier</ion-label>
-        <ion-select [(ngModel)]="form.manier" name="manier">
+        <ion-select [(ngModel)]="form.manier" [ngModelOptions]="{standalone: true}">
         <ion-option value="telefoon" name="telefoon">Telefonisch</ion-option>
         <ion-option value="bezoek" name="bezoek">Bezoek</ion-option>
         </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Gesprek</ion-label>
-      <ion-textarea  name="gesprek" [(ngModel)]="form.gesprek" rows="5" cols="80">Hallo</ion-textarea>
+      <ion-textarea [(ngModel)]="form.gesprek" value="{{FormTekst}}" rows="5" cols="80" [ngModelOptions]="{standalone: true}">Hallo</ion-textarea>
     </ion-item>
     <button ion-button full type="submit">
       Opslaan

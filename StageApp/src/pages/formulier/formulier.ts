@@ -43,7 +43,13 @@ export class FormulierPage {
     this.FormDate = navParam.get("FormDate");
     this.FormTekst = navParam.get("FormTekst");
     this.FormManier = navParam.get("FormManier");
-  }
+    this.form = {
+      formuliernaam: this.FormName,
+      datum: this.FormDate,
+      manier: this.FormManier,
+      gesprek: this.FormTekst
+    };
+  } 
 
   public logForm(){
     this.shizzles.update(this.FormId, {
@@ -81,15 +87,8 @@ export class FormulierPage {
     doc.text(38, 65, this.form.formuliernaam);
     var gesprek = doc.splitTextToSize(this.form.gesprek, 170);
 
-
     doc.text(20, 90, gesprek);
-
-
-
-
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
-
-    
   }
   public CSVexport(): void{
     var csvstring = [{

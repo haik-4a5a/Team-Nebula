@@ -87,7 +87,7 @@ export class FormulierPage {
     var gesprek = doc.splitTextToSize(this.form.gesprek, 170);
 
     doc.text(20, 90, gesprek);
-    doc.save('+this.form.formuliernaam+.pdf');
+    doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
   }
 
   public back(): void{

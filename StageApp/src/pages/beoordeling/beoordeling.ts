@@ -58,6 +58,39 @@ export class BeoordelingPage {
     this.shizzleId = navParam.get("shizzleId");
     this.bshizzles = af.list('/shizzles/' + this.shizzleId + '/bform/');
     this.FormId = navParam.get("FormId");
+    this.bform.a1 = navParam.get("a1");
+    this.bform.o1 = navParam.get("o1");
+    this.bform.a2 = navParam.get("a2");
+    this.bform.o2 = navParam.get("o2");
+    this.bform.a3 = navParam.get("a3");
+    this.bform.o3 = navParam.get("o3");
+    this.bform.a4 = navParam.get("a4");
+    this.bform.o4 = navParam.get("o4");
+    this.bform.a5 = navParam.get("a5");
+    this.bform.o5 = navParam.get("o5");
+    this.bform.a6 = navParam.get("a6");
+    this.bform.o6 = navParam.get("o6");
+    this.bform.a7 = navParam.get("a7");
+    this.bform.o7 = navParam.get("o7");
+    this.bform.a8 = navParam.get("a8");
+    this.bform.o8 = navParam.get("o8");
+    this.bform.a9 = navParam.get("a9");
+    this.bform.o9 = navParam.get("o9");
+    this.bform.a10 = navParam.get("a10");
+    this.bform.o10 = navParam.get("o10");
+    this.bform.a11 = navParam.get("a11");
+    this.bform.o11 = navParam.get("o11");
+    this.bform.a12 = navParam.get("a12");
+    this.bform.o12 = navParam.get("o12");
+    this.bform.a13 = navParam.get("a13");
+    this.bform.o13 = navParam.get("o13");
+    this.bform.a14 = navParam.get("a14");
+    this.bform.o14 = navParam.get("o14");
+    this.bform.a15 = navParam.get("a15");
+    this.bform.o15 = navParam.get("o15");
+    this.bform.ata = navParam.get("ata");
+    this.bform.ota = navParam.get("ota");
+    console.log(navParam.get("o1"));
   }
 
   public save(): void {

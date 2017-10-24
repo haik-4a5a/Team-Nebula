@@ -19,7 +19,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,
     af: AngularFireDatabase, public actionSheetCtrl: ActionSheetController, public modalCtrl: ModalController) {
       this.shizzles = af.list('/shizzles');
-
 }
   read(shizzleId, shizzleTitle, shizzleArtist, shizzleImgUrl, shizzleWebUrl, shizzleYear){
     let prompt = this.navCtrl.push(UserInfo, {

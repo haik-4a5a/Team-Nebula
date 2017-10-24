@@ -86,7 +86,7 @@ export class FormulierPage {
 
 
 
-    doc.save('+this.form.formuliernaam+.pdf');
+    doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
 
     
   }

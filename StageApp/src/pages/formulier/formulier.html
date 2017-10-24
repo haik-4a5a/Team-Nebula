@@ -14,9 +14,6 @@
 </ion-header>
 
 <ion-content padding ng-app="formApp">
-  <button ion-button full (click)="back()">
-    Terug
-    </button>
   <form (ngSubmit)="logForm()" ng-controller="formCtrl">
     <ion-item>
       <ion-label fixed>Formulier</ion-label>
@@ -41,6 +38,9 @@
     </button>
     <button ion-button full (click)="PDFexport()">
       Export
+    </button>
+    <button ion-button full>
+      Verwijderen
     </button>
   </form>
 </ion-content>

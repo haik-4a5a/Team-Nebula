@@ -11,9 +11,6 @@
 </ion-header>
 
 <ion-content padding ng-app="formApp">
-  <button ion-button full (click)="back()">
-    Terug
-    </button>
   <form (ngSubmit)="logForm()" ng-controller="formCtrl">
     <ion-item>
       <ion-label fixed>Formulier</ion-label>
@@ -33,7 +30,7 @@
       <ion-label>Gesprek</ion-label>
       <ion-textarea [(ngModel)]="form.gesprek" value="{{FormTekst}}" rows="5" cols="80" [ngModelOptions]="{standalone: true}">Hallo</ion-textarea>
     </ion-item>
-    <button ion-button full type="submit">
+    <button ion-button full type="submit" (click)="pop()">
       Opslaan
     </button>
     <button ion-button full (click)="PDFexport()">

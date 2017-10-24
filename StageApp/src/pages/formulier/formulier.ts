@@ -62,8 +62,8 @@ export class FormulierPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormulierPage');
   }
-  public onButtonClicked(): void{
-
+  public pop(): void{
+    this.viewCtrl.dismiss();
   }
 
   public PDFexport(): void{
@@ -88,9 +88,5 @@ export class FormulierPage {
 
     doc.text(20, 90, gesprek);
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
-  }
-
-  public back(): void{
-    this.viewCtrl.dismiss();
   }
 }

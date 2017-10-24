@@ -4,6 +4,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 
 import jsPDF  from 'jspdf';
 declare let jsPD;
+import * as papa from 'papaparse';
 
 /**
  * Generated class for the FormulierPage page.
@@ -89,6 +90,25 @@ export class FormulierPage {
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
 
     
+  }
+  public CSVexport(): void{
+    var csvstring = [{
+	    "Column 1": "1-1",
+	    "Column 2": "1-2",
+	    "Column 3": "1-3",
+	    "Column 4": "1-4"
+	}];
+let csv = papa.unparse({
+      data: csvstring
+    });
+var blob = new Blob([csv]);
+    var a = window.document.createElement("a");
+    a.href = window.URL.createObjectURL(blob);
+    a.download = "newdata.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
   }
 
   public back(): void{

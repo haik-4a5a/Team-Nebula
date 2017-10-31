@@ -61,7 +61,7 @@ export class BeoordelingPageTwo {
     this.BFormA24 = navParam.get("BFormA24"); 
     this.BFormO24 = navParam.get("BFormO24"); 
     this.BFormAH = navParam.get("BFormAH"); 
-    this.BFormOH = navParam.get("BFormOHO");
+    this.BFormOH = navParam.get("BFormOH");
     this.bform = {
       a16: this.BFormA16,
       o16: this.BFormO16,
@@ -109,5 +109,8 @@ export class BeoordelingPageTwo {
     ah: this.bform.ah,
     oh: this.bform.oh
   })
+  this.navCtrl.pop().then(()=>{
+    this.navCtrl.pop()
+  });    
 }
 }

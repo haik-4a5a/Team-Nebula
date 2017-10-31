@@ -114,7 +114,7 @@ export class BeoordelingPage {
     this.BFormA24 = navParam.get("BFormA24"); 
     this.BFormO24 = navParam.get("BFormO24"); 
     this.BFormAH = navParam.get("BFormAH"); 
-    this.BFormOH = navParam.get("BFormOHO");
+    this.BFormOH = navParam.get("BFormOH");
     this.bform = {
     a1: this.BFormA1,
     o1: this.BFormO1,

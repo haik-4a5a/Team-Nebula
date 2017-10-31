@@ -17,7 +17,7 @@
   <ion-item class='list-back' *ngFor="let shizzle of shizzles | async" (click)="read(shizzle.$key, shizzle.datum, shizzle.formuliernaam, shizzle.gesprek, shizzle.manier)">
     GF - {{ shizzle.formuliernaam }}
   </ion-item>
-  <ion-item class='list-back' *ngFor="let bshizzle of bshizzles | async" (click)="readb(bshizzle.$key)">
+  <ion-item class='list-back' *ngFor="let bshizzle of bshizzles | async" (click)="readb(bshizzle.$key, bshizzle.a1 ,bshizzle.o1 ,bshizzle.a2 ,bshizzle.o2, bshizzle.a3, bshizzle.o3, bshizzle.a4, bshizzle.o4, bshizzle.a5, bshizzle.o5, bshizzle.a6, bshizzle.o6, bshizzle.a7, bshizzle.o7, bshizzle.a8, bshizzle.o8, bshizzle.a9, bshizzle.o9, bshizzle.a10, bshizzle.o10, bshizzle.a11, bshizzle.o11, bshizzle.a12, bshizzle.o12, bshizzle.a13, bshizzle.o13, bshizzle.a14, bshizzle.o14, bshizzle.a15, bshizzle.o15, bshizzle.a16, bshizzle.o16, bshizzle.a17, bshizzle.o17, bshizzle.a18, bshizzle.o18, bshizzle.a19, bshizzle.o19, bshizzle.a20, bshizzle.o20, bshizzle.a21, bshizzle.o21, bshizzle.a22, bshizzle.o22, bshizzle.a23, bshizzle.o23, bshizzle.a24, bshizzle.o24, bshizzle.ata, bshizzle.ota, bshizzle.ah, bshizzle.oh)">
     BF - {{ bshizzle.formuliernaam }}
   </ion-item>
   <button ion-button (click)="showOptions()">

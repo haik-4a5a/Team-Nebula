@@ -14,6 +14,7 @@ export class BeoordelingPageTwo {
   shizzleId;
   bshizzles: FirebaseListObservable<any>;
   FormId;
+  BFormA16; BFormO16; BFormA17; BFormO17; BFormA18; BFormO18; BFormA19; BFormO19; BFormA20; BFormO20; BFormA21; BFormO21; BFormA22; BFormO22; BFormA23; BFormO23; BFormA24; BFormO24; BFormAH; BFormOH;  
   bform = {
     a16: '',
     o16: '',
@@ -41,6 +42,48 @@ export class BeoordelingPageTwo {
     this.shizzleId = navParam.get("shizzleId");
     this.bshizzles = af.list('/shizzles/' + this.shizzleId + '/bform/');  
     this.FormId = navParam.get("FormId"); 
+    this.BFormA16 = navParam.get("BFormA16"); 
+    this.BFormO16 = navParam.get("BFormO16"); 
+    this.BFormA17 = navParam.get("BFormA17"); 
+    this.BFormO17 = navParam.get("BFormO17"); 
+    this.BFormA18 = navParam.get("BFormA18"); 
+    this.BFormO18 = navParam.get("BFormO18"); 
+    this.BFormA19 = navParam.get("BFormA19"); 
+    this.BFormO19 = navParam.get("BFormO19"); 
+    this.BFormA20 = navParam.get("BFormA20"); 
+    this.BFormO20 = navParam.get("BFormO20"); 
+    this.BFormA21 = navParam.get("BFormA21"); 
+    this.BFormO21 = navParam.get("BFormO21"); 
+    this.BFormA22 = navParam.get("BFormA22"); 
+    this.BFormO22 = navParam.get("BFormO22"); 
+    this.BFormA23 = navParam.get("BFormA23"); 
+    this.BFormO23 = navParam.get("BFormO23"); 
+    this.BFormA24 = navParam.get("BFormA24"); 
+    this.BFormO24 = navParam.get("BFormO24"); 
+    this.BFormAH = navParam.get("BFormAH"); 
+    this.BFormOH = navParam.get("BFormOHO");
+    this.bform = {
+      a16: this.BFormA16,
+      o16: this.BFormO16,
+      a17: this.BFormA17,
+      o17: this.BFormO17,
+      a18: this.BFormA18,
+      o18: this.BFormO18,
+      a19: this.BFormA19,
+      o19: this.BFormO19,
+      a20: this.BFormA20,
+      o20: this.BFormO20,
+      a21: this.BFormA21,
+      o21: this.BFormO21,
+      a22: this.BFormA22,
+      o22: this.BFormO22,
+      a23: this.BFormA23,
+      o23: this.BFormO23,
+      a24: this.BFormA24,
+      o24: this.BFormO24,
+      ah: this.BFormAH,
+      oh: this.BFormOH
+    };
   }
 
   public save(){

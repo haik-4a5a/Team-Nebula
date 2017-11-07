@@ -144,6 +144,7 @@ var blob = new Blob([csv]);
   public back(): void{
     this.viewCtrl.dismiss();
   }
+  
 
 
   deleteGespreksForm(shizzleId) {

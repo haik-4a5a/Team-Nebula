@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController, A
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 import jsPDF  from 'jspdf';
-declare let jsPD;
 import * as papa from 'papaparse';
 
 /**
@@ -21,6 +20,7 @@ import * as papa from 'papaparse';
 
 
 export class FormulierPage {
+  
   shizzles: FirebaseListObservable<any>;
   shizzleId;
   FormId;
@@ -91,17 +91,46 @@ export class FormulierPage {
     doc.text(20, 90, gesprek);
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
   }
+csvData: any[] = [];
+  headerRow: any[] = [];
 
   public CSVexport(): void{
-    var csvstring = [{
-	    "Column 1": "1-1",
-	    "Column 2": "1-2",
-	    "Column 3": "1-3",
-	    "Column 4": "1-4"
-	}];
+    var csvstring = 'Column 1;","Column 2;","Column 3,;Column 4; \n 1-1; ,1-2; ,1-3; ,1-4;  \n 2-1; ,2-2; ,2-3; ,2-4;  \n 3-1; ,3-2; ,3-3; ,3-4 \n 4,5,6,7';
+
+    
+    let parsedData = papa.parse(csvstring).data;
+     this.headerRow = parsedData[0];
+ console.log(parsedData);
+
+    parsedData.splice(0, 1);
+    this.csvData = parsedData;
+
 let csv = papa.unparse({
-      data: csvstring
-    });
+	fields: ["Onderwerp ;", "Leerlingnummer  ;" ,"Datum  ;" ,"Manier ;"],
+	data: [
+                [this.form.formuliernaam+";", "Leerlingnummer:      ;" ,this.form.datum+";" ,this.form.manier+";"],
+		["Gesprek ;", ";"],
+		[this.form.gesprek]
+	],
+        delimiter: ";",	// auto-detect
+	newline: "",	// auto-detect
+	quoteChar: '"',
+	header: false,
+	dynamicTyping: false,
+	preview: 0,
+	encoding: "",
+	worker: false,
+	comments: false,
+	step: undefined,
+	complete: undefined,
+	error: undefined,
+	download: false,
+	skipEmptyLines: false,
+	chunk: undefined,
+	fastMode: undefined,
+	beforeFirstChunk: undefined,
+	withCredentials: undefined
+});
 var blob = new Blob([csv]);
     var a = window.document.createElement("a");
     a.href = window.URL.createObjectURL(blob);
@@ -115,6 +144,7 @@ var blob = new Blob([csv]);
   public back(): void{
     this.viewCtrl.dismiss();
   }
+
 
   deleteGespreksForm(shizzleId) {
     this.shizzles.remove(this.FormId);

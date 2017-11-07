@@ -91,12 +91,10 @@ export class FormulierPage {
     doc.text(20, 90, gesprek);
     doc.save(this.form.formuliernaam+" "+this.form.datum+'.pdf');
   }
-<<<<<<< HEAD
 csvData: any[] = [];
   headerRow: any[] = [];
-=======
 
->>>>>>> f3bfd5751d41c1b92a1eab6fb01bb811a4ddc609
+
   public CSVexport(): void{
     var csvstring = 'Column 1;","Column 2;","Column 3,;Column 4; \n 1-1; ,1-2; ,1-3; ,1-4;  \n 2-1; ,2-2; ,2-3; ,2-4;  \n 3-1; ,3-2; ,3-3; ,3-4 \n 4,5,6,7';
 
@@ -147,9 +145,8 @@ var blob = new Blob([csv]);
   public back(): void{
     this.viewCtrl.dismiss();
   }
-<<<<<<< HEAD
-  }
-=======
+  
+
 
   deleteGespreksForm(shizzleId) {
     this.shizzles.remove(this.FormId);
@@ -180,4 +177,4 @@ var blob = new Blob([csv]);
 
 
 }
->>>>>>> f3bfd5751d41c1b92a1eab6fb01bb811a4ddc609
+
